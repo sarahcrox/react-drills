@@ -1,26 +1,20 @@
-import React from 'react';
+import React, { Component }from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+      this.state={
+        partyFood: ["Ice Ceam", "Sprinkles", "Chocolate Syrup", "Whipped Cream", "Cherries", "Ice Cream Cones"]
+    };
+  }
+  render(){
+    let iceCreamParty = this.state.partyFood.map((element, index) => {
+    return <h3 key={index}>{element}</h3>;
+    });
+  return <div className="App">{iceCreamParty}</div>
+  }
 }
 
 export default App;
